@@ -84,7 +84,7 @@ body {
     width: 55px;
     height: 55px;
     font-size: 1.8rem;
-    background-color: var(--tenne-tawny);
+    background: var(--tenne-tawny);
     color:#fff;
     border: none;
     border-top-right-radius: 2rem;
@@ -93,7 +93,7 @@ body {
 }
 
 .search-btn:hover {
-    background-color: var(--tenne-tawny-dark)
+    background-color: var(--tenne-tawny-dark);
 }
 
 .meal-result {
@@ -102,12 +102,13 @@ body {
 
 #meal {
     margin: 2.4rem 0;
+    
 }
 
 .meal-item {
     border-radius: 1rem;
     overflow: hidden;
-    box-shadow:  0 4px 21px -12px rgba(0,0,0,0.79);
+    box-shadow: 0 4px 21px -12px rgba(0,0,0,0.79);
     margin: 2rem 0;
 }
 
@@ -127,9 +128,136 @@ body {
 .recipe-btn {
     text-decoration: none;
     color: #fff;
-    background: var(--tenne-tawny-dark);
+    background: var(--tenne-tawny);
     font-weight: 500;
     font-size: 1.1rem;
     padding: 0.75rem 0;
     display: block;
+    width: 175px;
+    margin: 1rem auto;
+    border-radius: 2rem;
+    transition: all 0.4s linear;
+}
+
+.recipe-btn:hover {
+    background: var(--tenne-tawny-dark);
+}
+
+/* meal details */
+.meal-details {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    background: var(--tenne-tawny);
+    border-radius: 1rem;
+    width: 90%;
+    height: 90%;
+    overflow-y: scroll;
+    
+    padding: 2rem 0;
+}
+/* face sa dispara scrollbar-ul */
+.meal-details::-webkit-scrollbar {
+    width: 10px;
+}
+
+.meal-details::-webkit-scrollbar-thumb {
+    background: #f0f0f0;
+    border-radius: 2rem;
+}
+
+/* js related */
+.showRecipe {
+    display: block;
+}
+
+.meal-details-content {
+    margin: 2rem;
+}
+
+.recipe-close-btn {
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    font-size: 1.8rem;
+    background: #fff;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.9;
+}
+
+.recipe-title {
+    letter-spacing: 1px;
+    padding-bottom: 1rem;
+}
+
+.recipe-category {
+    background: #fff;
+    font-weight: 600;
+    color: var(--tenne-tawny);
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.3rem;
+}
+
+
+.recipe-instruct {
+    padding: 1rem 0;
+}
+
+.recipe-meal-img img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: block;
+}
+
+.recipe-link {
+    margin: 1.4rem 0;
+}
+
+.recipe-link a {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 700;
+    transition: all 0.4s linear;
+}
+
+.recipe-link a:hover {
+    opacity: 0.8;
+}
+
+/* Media Queries */
+@media screen and (min-width: 600px) {
+    .meal-search-box {
+        width: 540px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+  
+}
+
+@media screen and (min-width: 768px) {
+    #meal {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+    .meal-item {
+        margin: 0;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    #meal {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
